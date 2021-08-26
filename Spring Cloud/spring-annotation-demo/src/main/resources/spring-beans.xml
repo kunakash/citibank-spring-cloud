@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Creating Datasource object -->
+	<bean id = "ds" class = "com.org.dao.DataSource">
+		<property name="url" value = "jdbc:dummy:hello:port"></property>
+		<property name="username" value = "dummyUsername"></property>
+		<property name="password" value = "dummyPassword"></property>
+	</bean>
+	
+	<!-- Creating DAO Object -->
+	<bean id = "dao" class = "com.org.dao.CustomerDao">
+		<property name="datasource" ref = "ds"></property>
+	</bean>
+	
+	<!-- Creating Service Object -->
+	<bean id = "service" class = "com.org.service.CustomerService">
+		<property name = "customerDao" ref = "dao"></property>
+	</bean>
+	
+</beans>
