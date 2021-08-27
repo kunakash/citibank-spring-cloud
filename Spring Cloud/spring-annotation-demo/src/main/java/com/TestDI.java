@@ -2,9 +2,6 @@ package com;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.org.dao.CustomerDao;
-import com.org.dao.DataSource;
 import com.org.service.CustomerService;
 
 public class TestDI {
